@@ -20,7 +20,7 @@ app.get(`/${api_prefix}/teams/:teamId?`, team_controller.team_details)
 // Player routes
 app.post(`/${api_prefix}/players`, player_controller.create_player)
 app.get(`/${api_prefix}/players`, player_controller.list_players)
-app.get(`/${api_prefix}/players/:teamId?`, player_controller.player_details)
+app.get(`/${api_prefix}/players/:playerId?`, player_controller.player_details)
 
 
 

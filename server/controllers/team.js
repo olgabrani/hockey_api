@@ -8,7 +8,7 @@ exports.create_team = function(req, res) {
 }
 
 // Get the details of a team
-exports.team_details = function(req, req ) {
+exports.team_details = function(req, res ) {
   console.log(`Requested team ${req.params.teamId}`)
   Team.findAll({
     where: {

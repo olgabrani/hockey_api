@@ -8,7 +8,7 @@ exports.create_player = function(req, res) {
 }
 
 // Get the details of a player
-exports.player_details = function(req, req ) {
+exports.player_details = function(req, res ) {
   console.log(`Requested player ${req.params.playerId}`)
   Player.findAll({
     where: {
