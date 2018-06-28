@@ -21,7 +21,8 @@ app.get(`/${api_prefix}/teams/:teamId?`, team_controller.team_details)
 app.post(`/${api_prefix}/players`, player_controller.create_player)
 app.get(`/${api_prefix}/players`, player_controller.list_players)
 app.get(`/${api_prefix}/players/:playerId?`, player_controller.player_details)
-
+// Assign player to team
+app.post(`/${api_prefix}/player_to_team`, player_controller.player_to_team)
 
 
 app.listen(port, () => {

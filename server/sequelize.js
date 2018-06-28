@@ -16,6 +16,11 @@ const sequelize = new Sequelize('hockey_api', 'root', 'root', {
 
 const Team = TeamModel(sequelize, Sequelize)
 const Player = PlayerModel(sequelize, Sequelize)
+// A Player can belong to a lot of Teams
+const PlayerTeam = sequelize.define('player_team', {})
+
+Player.belongsToMany(Team, { through: PlayerTeam, unique: false })
+Team.belongsToMany(Player, { through: PlayerTeam, unique: false })
 
 sequelize.sync()
   .then(() => {

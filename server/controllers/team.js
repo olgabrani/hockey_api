@@ -1,4 +1,4 @@
-const { Team } = require('../sequelize')
+const { Team, Player } = require('../sequelize')
 
 
 // Create team
@@ -13,7 +13,13 @@ exports.team_details = function(req, res ) {
   Team.findAll({
     where: {
       id: req.params.teamId
+    },
+  include: [{
+    model: Player,
+    through: {
+      attributes: [],
     }
+  }]
   }).then(list => res.json(list[0]))
 }
 
